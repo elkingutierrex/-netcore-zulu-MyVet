@@ -13,12 +13,12 @@ namespace MyVet.Web.Migrations
                 {
                     Id = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
-                    Document = table.Column<int>(maxLength: 30, nullable: false),
-                    FristName = table.Column<int>(maxLength: 50, nullable: false),
-                    LastName = table.Column<int>(maxLength: 50, nullable: false),
-                    FixedPhone = table.Column<int>(maxLength: 20, nullable: false),
-                    CellPhone = table.Column<int>(maxLength: 20, nullable: false),
-                    Address = table.Column<int>(maxLength: 100, nullable: false)
+                    Document = table.Column<string>(maxLength: 30, nullable: false),
+                    FristName = table.Column<string>(maxLength: 50, nullable: false),
+                    LastName = table.Column<string>(maxLength: 50, nullable: false),
+                    FixedPhone = table.Column<string>(maxLength: 20, nullable: true),
+                    CellPhone = table.Column<string>(maxLength: 20, nullable: false),
+                    Address = table.Column<string>(maxLength: 100, nullable: true)
                 },
                 constraints: table =>
                 {

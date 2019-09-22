@@ -24,22 +24,26 @@ namespace MyVet.Web.Migrations
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<int>("Address")
+                    b.Property<string>("Address")
                         .HasMaxLength(100);
 
-                    b.Property<int>("CellPhone")
+                    b.Property<string>("CellPhone")
+                        .IsRequired()
                         .HasMaxLength(20);
 
-                    b.Property<int>("Document")
+                    b.Property<string>("Document")
+                        .IsRequired()
                         .HasMaxLength(30);
 
-                    b.Property<int>("FixedPhone")
+                    b.Property<string>("FixedPhone")
                         .HasMaxLength(20);
 
-                    b.Property<int>("FristName")
+                    b.Property<string>("FristName")
+                        .IsRequired()
                         .HasMaxLength(50);
 
-                    b.Property<int>("LastName")
+                    b.Property<string>("LastName")
+                        .IsRequired()
                         .HasMaxLength(50);
 
                     b.HasKey("Id");
