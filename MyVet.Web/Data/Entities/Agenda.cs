@@ -4,6 +4,8 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
 
+
+
 namespace MyVet.Web.Data.Entities
 {
     public class Agenda
@@ -14,8 +16,8 @@ namespace MyVet.Web.Data.Entities
         [Display(Name = "Date")]
         [Required(ErrorMessage = "The field {0} is mandatory.")]
         [DataType(DataType.DateTime)]
-        [DisplayFormat(DataFormatString = "{0:yyyy/MM/dd}", ApplyFormatInEditMode = true)]
-        public string Date { get; set; }
+        [DisplayFormat(DataFormatString = "{0:yyyy/MM/dd H:mm tt}", ApplyFormatInEditMode = true)]
+        public DateTime Date { get; set; }
 
         public string Remarks { get; set; }
 
@@ -23,8 +25,12 @@ namespace MyVet.Web.Data.Entities
         public bool  IsAvailable { get; set; }
 
         [Display(Name = "Date")]
-        [DisplayFormat(DataFormatString = "{0:yyyy/MM/dd}")]
+        [DisplayFormat(DataFormatString = "{0:yyyy/MM/dd H:mm tt}")]
         public DateTime DateLocal => Date.ToLocalTime();
+
+        public Owner owner { get; set; }
+
+        public Pet  Pet { get; set; }
 
     }
 }

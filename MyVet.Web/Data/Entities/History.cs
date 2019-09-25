@@ -25,6 +25,8 @@ namespace MyVet.Web.Data.Entities
         [DisplayFormat(DataFormatString = "{0:yyyy/MM/dd}")]
         public DateTime DateLocal => Date.ToLocalTime();
 
+        public ServiceType ServiceType { get; set; }
+
 
 
     }

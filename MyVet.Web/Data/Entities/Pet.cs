@@ -26,7 +26,7 @@ namespace MyVet.Web.Data.Entities
         [Required(ErrorMessage = "The field {0} is mandatory.")]
         [DataType(DataType.DateTime)]
         [DisplayFormat(DataFormatString = "{0:yyyy/MM/dd}", ApplyFormatInEditMode = true)]
-        public string Born { get; set; }
+        public DateTime Born { get; set; }
 
         public string Remarks { get; set; }
 
@@ -37,7 +37,19 @@ namespace MyVet.Web.Data.Entities
 
         [Display(Name = "Born Local")]
         [DisplayFormat(DataFormatString = "{0:yyyy/MM/dd}")]
-        public DateTime BornLocal => Date.ToLocalTime();
+        public DateTime BornLocal => Born.ToLocalTime();
+
+
+        //relations
+        public Pet PetType { get; set; }
+
+        public Owner Owner { get; set; }
+
+        public ICollection<History>Histories { get; set; }
+
+        public ICollection<Agenda>Agendas { get; set; }
+
+
 
     }
 }
